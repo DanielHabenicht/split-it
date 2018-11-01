@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Signup</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-input required type="text" [(ngModel)]="email" placeholder="E-mail"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input required type="text" [(ngModel)]="password" placeholder="Password"></ion-input>
+  </ion-item>
+  <ion-button (click)="signUp()">Sign Up</ion-button>
+  <a [routerLink]="['/login']">I already have an account.</a>
+
+</ion-content>
