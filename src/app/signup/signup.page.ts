@@ -10,12 +10,17 @@ import { Router } from '@angular/router';
 export class SignupPage implements OnInit {
   public email: string;
   public password: string;
+  public displayName: string;
   constructor(public afAuth: AngularFireAuth, private router: Router) {}
 
   ngOnInit() {}
 
   public signUp() {
-    this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password).then(success => {
+    this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password).then(user => {
+      user.user.updateProfile({
+        displayName: this.displayName,
+        photoURL: null
+      });
       this.router.navigate(['home']);
     });
   }

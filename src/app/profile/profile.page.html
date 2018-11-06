@@ -1,9 +1,21 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Profile</ion-title>
+    <ion-title>
+      <ion-menu-toggle>
+        <ion-icon name="menu"></ion-icon>
+      </ion-menu-toggle>
+      Profile
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-grid>
+    <ion-row center>
+      <ion-col>
+        <h1>Hello {{ (afAuth.user | async).displayName }}!</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

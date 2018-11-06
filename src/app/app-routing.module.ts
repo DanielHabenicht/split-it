@@ -5,11 +5,11 @@ import { AuthGuard } from './auth.guard';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'ResetPassword', loadChildren: './reset-password/reset-password.module#ResetPasswordPageModule' },
+  { path: 'resetPassword', loadChildren: './reset-password/reset-password.module#ResetPasswordPageModule' },
   { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule', canActivate: [AuthGuard] },
-  { path: 'Profile', loadChildren: './profile/profile.module#ProfilePageModule', canActivate: [AuthGuard] },
-  { path: 'Dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule', canActivate: [AuthGuard] },
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule', canActivate: [AuthGuard] },
+  { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardPageModule', canActivate: [AuthGuard] },
   {
     path: 'ExpenseCreate',
     loadChildren: './expense-create/expense-create.module#ExpenseCreatePageModule',
